@@ -2,7 +2,7 @@
 * @Author: askMeWhy
 * @Date:   2017-12-04 18:22:13
 * @Last Modified by:   bigWave
-* @Last Modified time: 2017-12-15 15:17:32
+* @Last Modified time: 2018-03-30 11:31:38
 */
 export default {
 	computed:{
@@ -21,10 +21,10 @@ export default {
 			let _p = 0;
 			if(this.bill && this.bill.list.length > 0){
 				this.bill.list.map(index=>{
-					_p += Number(index.pay);
+					_p += Number(index.pay*100);
 				})
 			}
-			return _p;
+			return _p/100;
 		}
 	}
 }

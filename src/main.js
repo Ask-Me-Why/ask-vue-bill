@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { Select,Option,OptionGroup }  from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.scss'
+import 'element-ui/lib/theme-chalk/index.css'
 import ASKComponents from './components/ask';
 import './router/router.auth.js';
 import VeeValidate from 'vee-validate'

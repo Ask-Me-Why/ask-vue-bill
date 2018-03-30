@@ -205,8 +205,9 @@ export default {
 		},
 		price:{
 			get(){
-				let _p = Number(this.item.pay - this.rootBill.averagePrice);
-				return _p;
+				let _p = Number(this.item.pay*100 - this.rootBill.averagePrice*100);
+				
+				return _p/100;
 			}
 		}
 	},

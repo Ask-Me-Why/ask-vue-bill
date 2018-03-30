@@ -202,7 +202,7 @@
 									</template>
 									<template v-else>
 										<div>{{item.pay}}元</div>
-										<div>{{item.price < 0 ? "出":"收"}} {{Math.abs(item.price)}}元</div>
+										<div>{{item.price < 0 ? "出":"收"}} {{Math.abs(item.price.toFixed(10))}}元</div>
 									</template>
 								</div>
 							</template>
@@ -224,7 +224,7 @@
 								</template>
 								<template v-else>
 									<div>{{all.pay}}元</div>
-									<div>{{all.price < 0 ? "出":"收"}} {{Math.abs(all.price)}}元</div>
+									<div>{{all.price < 0 ? "出":"收"}} {{Math.abs(all.price.toFixed(10))}}元</div>
 								</template>
 							</div>
 						</template>
@@ -312,11 +312,15 @@ export default {
 					let _index = bill.list.findIndex(list=> list.user_id == item._id);
 					if(_index != -1 ){
 						item.pay = bill.list[_index].pay;
-						item.price = item.pay - _averagePrice;
+
+						item.price = item.pay*100 - _averagePrice*100;
+						item.price = item.price/100;
+						
 					}
 					return item;
 				});
 				once.all = _all;
+
 				this.allBillPrice += once.all;
 				_r.push(once)
 			})
