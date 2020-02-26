@@ -4,7 +4,7 @@ let config = {
 	getBaseUrl() {
 		let _r = this.el.getAttribute('data-api');
 		if (this.isLocal) {
-			_r = 'http://118.24.109.70:8047/api';
+			_r = 'https://www.askmewhy.cn/ask-bill/api';
 			// _r = 'http://box.bocaihd.com/page/web-app/api';
 			/*{
 				13540270352,
